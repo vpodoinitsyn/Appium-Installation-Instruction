@@ -56,11 +56,11 @@ Homebrew/homebrew-core (git revision xxxx; last commit xxxx)
 
 To get *Xcode*, open *App Store*, look for *Xcode*, hit *GET* (check out the screenshot below). I have it already installed, so there is *OPEN* instead of *GET*.
 
-![](Screenshot 2023-05-12 at 12.57.14 PM.png)
+![](./Screenshot 2023-05-12 at 12.57.14 PM.png)
 
 Follow instalation instructions, you should be able to open *Xcode* at after the process:
 
-![](Screenshot 2023-05-12 at 1.34.37 PM.png)
+![](./Screen_Shot_2023-05-12_at_1.34.37PM.png)
 
 ## 3. jdk
 
@@ -84,35 +84,35 @@ Otherwise, proceed to this [page](https://www.oracle.com/technetwork/java/javase
 
 ## 4. android sdk
 
-Download Android Studio from [here](https://developer.android.com/studio?pkg=studio), might take a while, installer quite bulky. Open installer and follow instalation instructions. Outcome of instalation process should be: ![Screen Shot 2019-07-20 at 3.16.06 PM](Screenshot 2023-05-12 at 1.39.41 PM.png)
+Download Android Studio from [here](https://developer.android.com/studio?pkg=studio), might take a while, installer quite bulky. Open installer and follow instalation instructions. Outcome of instalation process should be: ![Screen Shot 2019-07-20 at 3.16.06 PM](./Screenshot 2023-05-12 at 1.39.41 PM.png)
 
 ## 5. avd
 
 Open **Android Studio** click on *Configure* and select *AVD Manager*:
 
-![](Screenshot 2023-05-12 at 1.38.10 PM.png)
+![](./Screenshot 2023-05-12 at 1.38.10 PM.png)
 
 Click at *Create Virtual Device*:
 
-![](Screenshot 2023-05-12 at 1.43.26 PM.png)
+![](./Screenshot 2023-05-12 at 1.43.26 PM.png)
 
 Go with *Pixel 4* and hit *Next*:
 
-![](Screenshot 2023-05-12 at 1.59.16 PM.png)
+![](./Screenshot 2023-05-12 at 1.59.16 PM.png)
 
 Download Android *R* os image by clicking at *Download* link and following instalation instructions:
 
-![](Screenshot 2023-05-12 at 2.01.11 PM.png)
+![](./Screenshot 2023-05-12 at 2.01.11 PM.png)
 
 Now it's a time to create an emulator, select Android *R* os image and hit next:
 
 Rename AND so the name doesn't contain spaces (Pixel_4) and click *Next*:
 
-![](Screenshot 2023-05-12 at 2.06.36 PM.png)
+![](./Screenshot 2023-05-12 at 2.06.36 PM.png)
 
 Run emulator by clicking play button:
 
-![](Screenshot 2023-05-12 at 2.07.23 PM.png)
+![](./Screenshot 2023-05-12 at 2.07.23 PM.png)
 
 ## 6. node.js and npm
 
@@ -238,7 +238,7 @@ Remote Path - /wd/hub/
 Remote Port - 4723
 ```
 
-![](Screenshot 2023-05-12 at 2.20.33 PM.png)
+![](./Screenshot 2023-05-12 at 2.20.33 PM.png)
 
 In order to create a connection between the inspector and the enameled device, you need to configure "Desired Capabilities"
 
@@ -250,12 +250,12 @@ In order to create a connection between the inspector and the enameled device, y
 "app": "/Users/vpodoinitsyn/Desktop/Apps/mobile-dev.apk"
 ```
 
-![](Screenshot 2023-05-12 at 2.25.44 PM.png)
+![](./Screenshot 2023-05-12 at 2.25.44 PM.png)
 
 
 Do not forget to specify the path to the Drone apk file (at this stage, this file should be stored on the working laptop)
 
-![](Screenshot 2023-05-12 at 2.34.45 PM.png)
+![](./Screenshot 2023-05-12 at 2.34.45 PM.png)
 
 
 
