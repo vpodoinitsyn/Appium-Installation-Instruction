@@ -47,7 +47,7 @@ Terminal has to respond with:
 
 ```bash
 Homebrew ~your-homebrew-version~
-Homebrew/homebrew-core (git revision 6b334; last commit 2019-05-14)
+Homebrew/homebrew-core (git revision xxxx; last commit xxxx)
 ```
 
 ## 2. xcode
@@ -56,11 +56,11 @@ Homebrew/homebrew-core (git revision 6b334; last commit 2019-05-14)
 
 To get *Xcode*, open *App Store*, look for *Xcode*, hit *GET* (check out the screenshot below). I have it already installed, so there is *OPEN* instead of *GET*.
 
-![](./Screen_Shot_2019-07-20_at_2.16.26PM.png)
+![](Screenshot 2023-05-12 at 12.57.14 PM.png)
 
 Follow instalation instructions, you should be able to open *Xcode* at after the process:
 
-![](./Screen_Shot_2019-07-20_at_2.49.03PM.png)
+![](Screenshot 2023-05-12 at 1.34.37 PM.png)
 
 ## 3. jdk
 
@@ -75,48 +75,44 @@ $ java --version
 You should get something similar to:
 
 ```bash
-java ~your-java-version~ 2018-07-17
-Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
-Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)
+openjdk 11.0.17 2022-10-18 LTS
+OpenJDK Runtime Environment Corretto-11.0.17.8.1 (build 11.0.17+8-LTS)
+OpenJDK 64-Bit Server VM Corretto-11.0.17.8.1 (build 11.0.17+8-LTS, mixed mode)
 ```
 
 Otherwise, proceed to this [page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and look for a *Mac OS X* distribution, don't forget to accept license agreement! Follow instalation instructions and get `java —version` going. 
 
 ## 4. android sdk
 
-Download Android Studio from [here](https://developer.android.com/studio?pkg=studio), might take a while, installer quite bulky. Open installer and follow instalation instructions. Outcome of instalation process should be: ![Screen Shot 2019-07-20 at 3.16.06 PM](./Screen_Shot_2019-07-20_at_3.16.06PM.png)
+Download Android Studio from [here](https://developer.android.com/studio?pkg=studio), might take a while, installer quite bulky. Open installer and follow instalation instructions. Outcome of instalation process should be: ![Screen Shot 2019-07-20 at 3.16.06 PM](Screenshot 2023-05-12 at 1.39.41 PM.png)
 
 ## 5. avd
 
 Open **Android Studio** click on *Configure* and select *AVD Manager*:
 
-![](./Screen_Shot_2019-07-20_at_5.01.02PM.png)
+![](Screenshot 2023-05-12 at 1.38.10 PM.png)
 
 Click at *Create Virtual Device*:
 
-![](./Screen_Shot_2019-07-20_at_5.02.30PM.png)
+![](Screenshot 2023-05-12 at 1.43.26 PM.png)
 
-Go with *Pixel 2* and hit *Next*:
+Go with *Pixel 4* and hit *Next*:
 
-![](./Screen_Shot_2019-07-20_at_5.03.29PM.png)
+![](Screenshot 2023-05-12 at 1.59.16 PM.png)
 
-Download Android *Q* os image by clicking at *Download* link and following instalation instructions:
+Download Android *R* os image by clicking at *Download* link and following instalation instructions:
 
-![](./Screen_Shot_2019-07-20_at_5.04.29PM.png)
+![](Screenshot 2023-05-12 at 2.01.11 PM.png)
 
-![](./Screen_Shot_2019-07-20_at_5.08.52PM.png)
+Now it's a time to create an emulator, select Android *R* os image and hit next:
 
-Now it's a time to create an emulator, select Android *Q* os image and hit next:
+Rename AND so the name doesn't contain spaces (Pixel_4) and click *Next*:
 
-![](./Screen_Shot_2019-07-20_at_5.14.51PM.png)
-
-Rename AND so the name doesn't contain spaces and click *Next*:
-
-![](./Screen_Shot_2019-07-20_at_5.15.16PM.png)
+![](Screenshot 2023-05-12 at 2.06.36 PM.png)
 
 Run emulator by clicking play button:
 
-![](./Screen_Shot_2019-07-20_at_5.16.26PM.png)
+![](Screenshot 2023-05-12 at 2.07.23 PM.png)
 
 ## 6. node.js and npm
 
@@ -134,9 +130,9 @@ Verify instalation with `node -v` and `npm -v`.
 
 ```shell
 $ node -v
-v10.10.0
+v18.12.0
 $ npm -v
-6.4.1
+9.6.4
 ```
 
 ## 7. appium
@@ -211,11 +207,8 @@ export ANDROID_HOME=/Users/{current-user-name}/Library/Android/sdk
 export PATH=$PATH:~/.local/bin$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin
 ```
 
- Note, don't forget to change `{current-user-name}` for real user name which is result of `whoami` command:
+ Note, don't forget to change `{current-user-name}` for real user name which is result of `whoami` command
 
-Example:
-
- ![](./Screen_Shot_2019-07-20_at_4.46.16PM.png)
 
 To save changes to the file hit *Control + X*, type *y* and hit *Enter*. **Important**, finish current terminal promt session (close all terminal windows) and start a new one, so changes to `.bash_profile` are in sync.
 
@@ -225,5 +218,46 @@ Install **carthage** using *homebrew*:
 $ brew install carthage
 ```
 
+## 7. appium-inspector
+
+You can install from here [here](https://github.com/appium/appium-inspector/releases)
+
+or Install command:
+
+```shell
+$ brew install --cask appium-inspector
+```
+
 Run `appium-doctor` again, everything should be green now.
+
+After you open the inspector, please check:
+
+```shell
+Remote Host - 127.0.0.1
+Remote Path - /wd/hub/
+Remote Port - 4723
+```
+
+![](Screenshot 2023-05-12 at 2.20.33 PM.png)
+
+In order to create a connection between the inspector and the enameled device, you need to configure "Desired Capabilities"
+
+```shell
+"platformName": "android",
+"platformVersion": "11.0",
+"deviceName": "Pixel_4",
+"automationName": "UiAutomator2",
+"app": "/Users/vpodoinitsyn/Desktop/Apps/mobile-dev.apk"
+```
+
+![](Screenshot 2023-05-12 at 2.25.44 PM.png)
+
+
+Do not forget to specify the path to the Drone apk file (at this stage, this file should be stored on the working laptop)
+
+![](Screenshot 2023-05-12 at 2.34.45 PM.png)
+
+
+
+
 
